@@ -170,6 +170,7 @@ __attribute__((constructor)) void library_init(void)
 
  - Basic puts example: [injectme_puts.c](example_libs/src/injectme_puts.c)
  - Reverse shell with fork example: [injectme_implant.c](example_libs/src/injectme_implant.c)
+ - Reverse shell with thread example: [injectme_thread.c](example_libs/src/injectme_thread.c)
  - Hooking example: [injectme_hook.c](example_libs/src/injectme_hook.c)
 
 ## Hooking

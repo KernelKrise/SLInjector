@@ -17,3 +17,6 @@ ${CC} -Wall -shared -fPIC -O2 -o ${BIN_DIR}/injectme_implant.so ${SRC_DIR}/injec
 
 # Compile injectme_hook.c
 ${CC} -Iinclude -Wall -shared -fPIC -O2 -o ${BIN_DIR}/injectme_hook.so ${SRC_DIR}/injectme_hook.c ${SRC_DIR}/hooking.c
+
+# Compile injectme_thread.c
+${CC} -Wall -shared -fPIC -O2 -o ${BIN_DIR}/injectme_thread.so ${SRC_DIR}/injectme_thread.c

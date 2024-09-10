@@ -13,7 +13,7 @@ int hook(int c, FILE *stream)
 {
     unhook_function("putc", putc_saved_body);
 
-    printf("Hooked putc(%x, %p)\n", c, stream);
+    printf("Hooked putc(0x%x, %p)\n", c, stream);
     int result = putc(c, stream);
     printf("\nResult: %d\n", result);
 
