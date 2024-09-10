@@ -2,6 +2,10 @@
 
 Simple Library Injector
 
+## Overview
+
+Very interesting and detailed guide about linux proxess injection [here](https://blog.f0b.org/2022/05/process-injection-on-linux-introduction/)
+
 ## Description
 
 View [description file](./DESCRIPTION.md)
