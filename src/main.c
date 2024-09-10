@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     char *target_lib;
 
     // Set log level
-    if (set_log_level(LOG_LEVEL_DEBUG))
+    if (set_log_level(LOG_LEVEL_INFO))
     {
         elog("Logging configuration error");
         return EXIT_FAILURE;
