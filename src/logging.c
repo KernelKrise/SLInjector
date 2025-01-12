@@ -1,16 +1,14 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 #include "logging.h"
 
 // Initialize the default log level
 int LOG_LEVEL = LOG_LEVEL_INFO;
 
-int set_log_level(int log_level)
-{
+int set_log_level(int log_level) {
     int result = 0;
-    switch (log_level)
-    {
+    switch (log_level) {
     case LOG_LEVEL_DEBUG:
         LOG_LEVEL = LOG_LEVEL_DEBUG;
         break;
@@ -30,10 +28,8 @@ int set_log_level(int log_level)
     return result;
 }
 
-void dlog(const char *format, ...)
-{
-    if (LOG_LEVEL > LOG_LEVEL_DEBUG)
-    {
+void dlog(const char *format, ...) {
+    if (LOG_LEVEL > LOG_LEVEL_DEBUG) {
         return;
     }
     va_list args;
@@ -44,10 +40,8 @@ void dlog(const char *format, ...)
     putchar('\n');
 }
 
-void ilog(const char *format, ...)
-{
-    if (LOG_LEVEL > LOG_LEVEL_INFO)
-    {
+void ilog(const char *format, ...) {
+    if (LOG_LEVEL > LOG_LEVEL_INFO) {
         return;
     }
     va_list args;
@@ -58,10 +52,8 @@ void ilog(const char *format, ...)
     putchar('\n');
 }
 
-void elog(const char *format, ...)
-{
-    if (LOG_LEVEL > LOG_LEVEL_ERROR)
-    {
+void elog(const char *format, ...) {
+    if (LOG_LEVEL > LOG_LEVEL_ERROR) {
         return;
     }
     va_list args;

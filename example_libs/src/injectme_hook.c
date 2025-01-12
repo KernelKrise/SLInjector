@@ -1,16 +1,15 @@
-#include <stdio.h>
 #include <dlfcn.h>
-#include <sys/mman.h>
-#include <string.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/mman.h>
 #include <unistd.h>
 
 #include "hooking.h"
 
 unsigned char putc_saved_body[JMP_HOOK_SIZE];
 
-int hook(int c, FILE *stream)
-{
+int hook(int c, FILE *stream) {
     unhook_function("putc", putc_saved_body);
 
     printf("Hooked putc(0x%x, %p)\n", c, stream);
@@ -21,8 +20,7 @@ int hook(int c, FILE *stream)
     return result;
 }
 
-__attribute__((constructor)) void library_init(void)
-{
+__attribute__((constructor)) void library_init(void) {
     puts("Hooking putc...");
     hook_function("putc", hook, putc_saved_body);
 }

