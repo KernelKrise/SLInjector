@@ -1,6 +1,6 @@
 # SLInjector
 
-Simple Library Injector
+Simple Library Injector, for educational purposes only.
 
 ## Overview
 
